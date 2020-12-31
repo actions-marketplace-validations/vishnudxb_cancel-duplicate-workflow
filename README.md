@@ -7,9 +7,8 @@ If you are using a single environment for your staging and testing and sometimes
 
 # Usage
 
-See [action.yml](action.yml)
+## Basic:
 
-Basic:
 ```yaml
 steps:
 - uses: vishnudxb/cancel-duplicate-workflow@v1.0
@@ -20,9 +19,9 @@ steps:
     branch_name: staging  # The branch which you want to check if any jobs are running!
 ```
 
-Sample usage in github action job:
+## Sample usage in github action job:
 
-For eg: your `test.yml` is triggered from your `testing` branch. The below action check if any deployment jobs are running in your `staging` branch. If do, cancel the test build.
+*For eg: your `test.yml` is triggered from your `testing` branch. The below action check if any deployment jobs are running in your `staging` branch. If do, cancel the test build.*
 
 ```yaml
 jobs:
