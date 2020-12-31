@@ -11,7 +11,7 @@ BRANCH_NAME=$4
 
 branch_status=$(curl -s -X GET -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $TOKEN" "https://api.github.com/repos/$REPO/actions/runs?branch=$BRANCH_NAME&status=in_progress" | jq '.workflow_runs[].status')
 
-if [ "$branch_status" -eq "in_progress" ]
+if [[ "$branch_status" == "in_progress" ]];
 then
   echo "$BRANCH_NAME is running, so cancelling this build..."  
   curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: token $TOKEN" https://api.github.com/repos/$REPO/actions/runs/$ID/cancel
