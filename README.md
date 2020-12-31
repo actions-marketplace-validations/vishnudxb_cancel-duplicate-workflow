@@ -22,7 +22,7 @@ steps:
 
 Sample usage in github action job:
 
-For eg: your `test.yaml` is triggered. Before deploy, you want to check if any staging deployment jobs are running. If do, cancel the test build.
+For eg: your `test.yml` is triggered from your `testing` branch. The below action check if any deployment jobs are running in your `staging` branch. If do, cancel the test build.
 
 ```yaml
 jobs:
