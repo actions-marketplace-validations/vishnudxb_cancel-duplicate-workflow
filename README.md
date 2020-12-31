@@ -11,7 +11,7 @@ If you are using a single environment for your staging and testing and sometimes
 
 ```yaml
 steps:
-- uses: vishnudxb/cancel-duplicate-workflow@v1.0
+- uses: vishnudxb/cancel-duplicate-workflow@v1.1
   with:
     repo: octocat/hello-world
     workflow_id: ${{ github.run_id }}
@@ -34,7 +34,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - uses: vishnudxb/cancel-duplicate-workflow@v1.0
+    - uses: vishnudxb/cancel-duplicate-workflow@v1.1
       with:
         repo: octocat/hello-world
         workflow_id: ${{ github.run_id }}
